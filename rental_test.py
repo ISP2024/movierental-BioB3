@@ -1,11 +1,10 @@
 import unittest
-from customer import Customer
 from rental import Rental
 from movie import Movie
 
 
 class RentalTest(unittest.TestCase):
-    
+
 	def setUp(self):
 		self.new_movie = Movie("Dune: Part Two", Movie.NEW_RELEASE)
 		self.regular_movie = Movie("Air", Movie.REGULAR)

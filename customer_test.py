@@ -1,15 +1,16 @@
 import re
-import unittest 
+import unittest
 from customer import Customer
 from rental import Rental
 from movie import Movie
 
-class CustomerTest(unittest.TestCase): 
+
+class CustomerTest(unittest.TestCase):
 	""" Tests of the Customer class"""
- 
+
 	def setUp(self):
 		"""Test fixture contains:
-    	
+
     	c = a customer
     	movies = list of some movies
     	"""
@@ -31,7 +32,7 @@ class CustomerTest(unittest.TestCase):
 		rental_4 = Rental(self.childrens_movie, 5)
 		self.c.add_rental(rental_4)
 		self.assertEqual(self.c.get_total_charge(), 47.0)
-    
+
 	def test_statement(self):
 		stmt = self.c.statement()
     	# get total charges from statement using a regex
