@@ -40,7 +40,7 @@ class Customer:
         rental_fmt = "{:40s}  {:6d} {:6.2f}\n"
         
         for rental in self.rentals:
-            frequent_renter_points += rental.rental_points()
+            frequent_renter_points += rental.get_rental_points()
             #  add a detail line to statement
             statement += rental_fmt.format(
                             rental.get_movie().get_title(), 
