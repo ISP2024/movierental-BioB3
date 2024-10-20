@@ -18,3 +18,11 @@ Before and after each refactoring you should **run the unit tests**.
 
 See [Resources](https://cpske.github.io/ISP/assignment/movierental/movierental-part1#resources) in the assignment description.
 
+## Rationale
+**2.1** what refactoring signs (code smells) suggest this refactoring?
+
+*Ans:* Data Class, because Rental only call Movie to get its price code.
+
+**2.2** what design principle suggests this refactoring? Why?, because Rental only call Movie to get its price code.
+
+*Ans:* Single Responsibility Principle, the Rental class is responsible for rental details and that should include pricing. The Movie class is responsible for keeping the information of movies, and movies don't set their own price.
