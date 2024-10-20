@@ -20,7 +20,7 @@ class Movie:
 
     def is_genre(self, string: str):
         """Return true if the movie belongs to the inputted genre."""
-        return string.capitalize() in self.genre
+        return string.lower() in [genre.lower() for genre in self.genre]
 
 
 class MovieCatalog:

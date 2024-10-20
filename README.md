@@ -26,3 +26,8 @@ See [Resources](https://cpske.github.io/ISP/assignment/movierental/movierental-p
 **2.2** what design principle suggests this refactoring? Why?, because Rental only call Movie to get its price code.
 
 *Ans:* Single Responsibility Principle, the Rental class is responsible for rental details and that should include pricing. The Movie class is responsible for keeping the information of movies, and movies don't set their own price.
+
+**5.2** Location of `get_price_for_movie` and the reasons.
+
+*Ans:* I put `get_price_for_movie` in the Rental class as a class method, because the Rental class is responsible for rental details, so the method to find price code should belong to this class according to Single Responsibility Principle.
+Doing this also make the code has low coupling and high cohesion because only the Rental class uses the price codes. 

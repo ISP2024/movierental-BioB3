@@ -1,4 +1,6 @@
 import pricing
+import datetime
+from movie import Movie
 
 
 class Rental:
@@ -36,3 +38,13 @@ class Rental:
    def get_rental_points(self) -> int:
       """Get the rental points earned from this rental."""
       return self.price_code.get_rental_points(self.get_days_rented())
+
+   @classmethod
+   def get_price_for_movie(cls, movie: Movie):
+      """Get the price code of the movie."""
+      current_year = datetime.datetime.today().year
+      if movie.year == current_year:
+         return pricing.NEW_RELEASE
+      if movie.is_genre("Children") or movie.is_genre("Childrens"):
+         return pricing.CHILDREN
+      return pricing.REGULAR
