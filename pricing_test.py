@@ -7,11 +7,6 @@ from pricing import NEW_RELEASE, REGULAR, CHILDREN
 class PricingTest(unittest.TestCase):
     """Tests for get_price_for_movie method."""
 
-    def setUp(self):
-        self.new_movie = Movie("Dune: Part Two", 2024, ["Action", "Adventure"])
-        self.regular_movie = Movie("Air", 2023, ["Drama"])
-        self.childrens_movie = Movie("Frozen", 2013, ["Children"])
-
     def test_childrens_movies(self):
         """Movies with children genre should have ChildrensPrice as price code."""
         movie1 = Movie("Frozen", 2013, ["Children"])
